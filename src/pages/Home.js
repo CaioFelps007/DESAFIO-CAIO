@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { View } from 'react-native';
-import { Modal } from 'react-native';
 import Textos from '../components/TextComponent';
 import CaixaTexto from '../components/TextInput';
 import Botao from '../components/ButtonComponent';
 import { styles } from '../style/StyleSheet';
+import Telamodal from '../components/Modal';
 
 
 export default function Home() {
@@ -49,17 +49,8 @@ export default function Home() {
             />
 
 
-
             {/* MODAL */}
-            <Modal visible={modal} animationType='slide' onRequestClose={setModal}>
-                <View style={styles.container2}>
-
-                    <Textos styletxt={styles.textobtn3} texto={`Fahrenheit:${Valor}`} />
-
-                    <Botao estilo={styles.botao2} onpress={fechar} styletxt={styles.textobtnModal} texto="Fechar"
-                    />
-                </View>
-            </Modal>
+            <Telamodal visivel={modal} animacao="slide" onrequest={false} onpres={fechar} txt={`Fahrenheit: ${Valor}`} />
 
 
         </View>
